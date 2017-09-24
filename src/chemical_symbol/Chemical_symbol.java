@@ -16,7 +16,8 @@ public class Chemical_symbol {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
+        
+        //test
         ChemicalSymbols cs = new ChemicalSymbols();
         cs.ruleVerification("Spenglerium", "Ee");
         cs.ruleVerification("Zeddemorium ", "Zr");

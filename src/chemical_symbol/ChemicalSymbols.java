@@ -14,11 +14,7 @@ public class ChemicalSymbols {
 
     public ChemicalSymbols() {
     }
-    
-    public void ValidSymbol(String elementName, String chemicalSymbole)
-    {
-              
-    }
+    //this function transforms a string into an array of characters
     public char[] StringTocharArray(String str)
     {
         int a = str.length();
@@ -26,7 +22,8 @@ public class ChemicalSymbols {
         tab = str.toCharArray();
         return tab;
     }
-    //cette fonction renvoi toutes les position d'u caractere dans une chaine
+    
+    //this function returns all the positions of a character in a string
     public ArrayList searchAllChartPositionInString(String str, char c)
     {
         str=str.toLowerCase();
@@ -44,7 +41,8 @@ public class ChemicalSymbols {
         }while(index>0);
         return al;
     }
-    //cette fonction teste si il ya une chiffre dans une chaine de caratère
+    
+    //this function tests whether there is a digit in a string
     public boolean containNumeric(String s)
     {
         boolean containsDigit = false;
@@ -59,40 +57,44 @@ public class ChemicalSymbols {
 
     return containsDigit;
     }
-    //cette fonctio vérifie si cette chainne possede un chiffrr
+    
+    //this function checks if this string has a number
     public boolean containNumericVerification(String s)
     {
         boolean res = false;
         if(containNumeric(s))
         {
             res = true;
-            System.out.println("le paramètre <"+s+"> ne doit pas avoir les valeurs numériques");
+            System.out.println("the <"+ s +"> parameter must not have numeric values");
         }
         return res;
     }
     
+   //this function verifies that the character number of the chemical symbol is correct 
     public boolean validNumberCharacterOfChemicalSymbol(String cs)
     {
         boolean res = false;
         if(cs!=null && !cs.isEmpty() && cs.length()==2 && cs!="  ")
             res=true;
         else
-            System.out.println("Le Symbole chimique <"+cs+"> doit avoir 2 caractère!!");
+            System.out.println("The chemical symbol <"+ cs +"> must have 2 characters.");
         
         return res;
             
     }
+    //this function verifies that the character number of the element name is correct 
     public boolean validNumberCharacterOfElementName(String en)
     {
         boolean res = false;
         if(en!=null && !en.isEmpty() && en.length()>1)
             res=true;
         else
-            System.out.println("Le nom de l'élément <"+en+"> doit avoir au moins 2 caractères!!");
+            System.out.println("The element name  <"+ en +">  must be at least 2 characters");
         
         return res;
             
     }
+    //this function sets the first letter of a string to uppercase
     public String firstCharUppercase(String str)
     {
         char[] char_table = str.toCharArray();
@@ -100,8 +102,8 @@ public class ChemicalSymbols {
         str = new String(char_table);
         return str;
     }
-    //cette fonction vérifie la casse
     
+    //this function checks the case 
     public boolean caseVerification(String str)
     {
         boolean res=false;
@@ -110,9 +112,16 @@ public class ChemicalSymbols {
         if(str.equals(correctWord))
             res = true;
         else
-            System.out.println("La première lettre du mot <"+str+"> doit obligatoirement être en Majuscule et le reste en miniscule");
+            System.out.println("The first letter of the word <"+ str +"> must be in uppercase and the sequence in lower case");
         return res;
     }
+    
+    /* check the validity of the parameters
+     * 1- number of character
+     * 2-case
+     * 3-does not include digits
+     * etc.
+     */
     public boolean  parametersVerification(String elementName, String chemicalSymbole)
     {
         boolean res = false;
@@ -121,6 +130,8 @@ public class ChemicalSymbols {
             res = true;
         return res;
     }
+    
+    //this function verifies that the chemecal symbol is valid according to the element name
     public void ruleVerification(String elementName, String chemicalSymbole)
     {
         boolean res = false;
